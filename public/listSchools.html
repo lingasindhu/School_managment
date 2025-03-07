@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Schools - School Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Find Nearby Schools</h1>
+            <a href="/" class="back-link">Back to Home</a>
+        </div>
+        
+        <div class="content-box">
+            <div class="search-panel">
+                <div class="form-group">
+                    <label for="user-latitude">Your Latitude:</label>
+                    <input type="number" id="user-latitude" name="user-latitude" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-longitude">Your Longitude:</label>
+                    <input type="number" id="user-longitude" name="user-longitude" step="any" required>
+                </div>
+                
+                <div class="actions">
+                    <button onclick="fetchSchools()" class="btn">Find Schools</button>
+                    <button onclick="getCurrentLocation()" class="btn-secondary">Use Current Location</button>
+                </div>
+            </div>
+            
+            <div id="schools-list">
+                <h2>Nearby Schools</h2>
+                <table id="schools-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Distance (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schools-data">
+                        <!-- Schools will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="listSchools.js"></script>
+</body>
+</html>
